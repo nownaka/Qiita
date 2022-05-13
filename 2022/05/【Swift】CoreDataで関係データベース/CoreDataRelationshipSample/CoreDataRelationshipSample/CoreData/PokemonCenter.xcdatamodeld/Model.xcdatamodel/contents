@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E258" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Box" representedClassName="Box" syncable="YES">
+        <attribute name="boxNo" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="pokemon" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pokemon" inverseName="boxNo" inverseEntity="Pokemon"/>
+    </entity>
+    <entity name="Pokemon" representedClassName="Pokemon" syncable="YES">
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="pokedexNo" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="boxNo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Box" inverseName="pokemon" inverseEntity="Box"/>
+    </entity>
+    <elements>
+        <element name="Box" positionX="-54" positionY="-9" width="128" height="74"/>
+        <element name="Pokemon" positionX="-63" positionY="-18" width="128" height="89"/>
+    </elements>
+</model>
